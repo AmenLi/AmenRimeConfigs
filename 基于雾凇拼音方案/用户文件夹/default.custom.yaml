@@ -1,0 +1,9 @@
+patch:
+  schema_list:
+    - {schema: double_pinyin}
+  switcher/hotkeys: # 只使用 F4 热键
+    - F4
+  # 方案选单不折叠
+  switcher/fold_options: false
+  # 使用右 Shift 键作为临时输入英文的开关
+  ascii_composer/switch_key/Shift_R: inline_ascii

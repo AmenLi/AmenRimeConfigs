@@ -1,0 +1,18 @@
+patch:
+  switches/+:
+    - name: emoji
+      states: [ 💀, 😄 ]
+      reset: 0
+      # 关闭 emoji，配置后“方案选单”再选择一下即可
+      # 设置会保存到 user.yaml 文件
+      # 如果以后修改配置重新部署后突然出现 emoji，则代表此文件的配置有问题未生效
+
+  # 自定义词库 rime_ice.custom.dict.yaml
+  translator/dictionary: rime_ice.custom
+
+  # 添加云联想候选词输入配置
+  engine/+:
+    processors/+:
+      - lua_processor@cloud_pinyin_processor
+    translators/+:
+      - lua_translator@cloud_pinyin_translator

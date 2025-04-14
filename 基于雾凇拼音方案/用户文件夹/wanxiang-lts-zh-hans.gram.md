@@ -1,0 +1,1 @@
+此文件替换成万象语法模型文件：wanxiang-lts-zh-hans.gram

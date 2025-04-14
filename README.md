@@ -1,0 +1,59 @@
+# 阿闷的 Rime 小狼毫配置
+
+## 基于雾凇拼音方案
+
+使用[雾凇拼音](https://github.com/iDvel/rime-ice)的自然码双拼，无辅助码。
+
+使用[万象拼音方案](https://github.com/amzxyz)的[语法模型+词库](https://github.com/amzxyz/RIME-LMDG)，及[自己修改的 Dracula 配色](https://github.com/AmenLi/AmenDracula-for-Rime)。
+
+### 万象的语法模型+词库说明
+
+语法模型为[长期支持版](https://github.com/amzxyz/RIME-LMDG/releases/tag/LTS)，词库为[每夜构建版](https://github.com/amzxyz/RIME-LMDG/releases/tag/dict-nightly)。
+
+请直接使用作者给出的启用方法，只是有一个缺点：
+以后更新雾凇拼音后，需要为 `*.schema.yaml` 文件重新添加。
+
+原本使用 `double_pinyin.custom.yaml` 添加语法模型，但并不能正确打出万象拼音 Pro 的示例长句“苍茫的天涯是我的爱绵延的青山脚下花盛开”，其中的部分词语联想不正确。从部署生成的文件及日志文件看，似乎有问题。
+
+使用作者的方法，才能正确打出。但其它长句示例还是会有问题，目前观望中，之后可能全面转万象拼音 Pro。根据其它使用者的说法，直接使用万象拼音效果非常不错。
+
+![](/基于雾凇拼音方案/长句错误示例.png)
+
+#### 添加词库
+
+`rime_ice.custom.dict.yaml` 的[做法参考](https://github.com/iDvel/rime-ice/issues/666#issuecomment-2681993098)，[具体写法参考](https://github.com/amzxyz/rime_wanxiang_pro/blob/main/wanxiang.dict.yaml)。
+
+复制雾凇原版 `rime_ice.dict.yaml` 全部内容，再进行修改添加。
+
+为了同时使用雾凇和万象的词库，把雾凇词库的 `base.dict.yaml` 改名为 `rimeice.base.dict.yaml` 以避免部署时的冲突及覆盖。
+
+但因为这些词库太大，部署日志必定会报词组重复的错误。**暂时不知道是否影响正常使用**。
+
+### 云联想候选词输入
+
+额外添加了[云联想候选词输入](https://github.com/hchunhui/librime-cloud)的功能。
+但目前实际上并不支持双拼输入法使用，观望作者后续是否更新，现在添加仅作备忘。
+
+项目 Issues 里有其他用户分享的双拼代码可供参考。
+
+`rime.lua` 里启用了谷歌拼音云联想。需要显示云联想候选词时，**每次都需要按** Ctrl+T 键触发。
+
+## 重新部署+排查问题
+
+这个配置在部署时**花费时间比较长**，需要耐心等待几分钟。
+
+必要时
+
+1. 关闭小狼毫算法服务的进程
+2. 删除用户文件夹里 build 文件夹内及日志文件夹内的所有文件
+3. 重启算法服务
+4. 重新部署
+5. 查看部署生成文件和日志文件，进行问题排查。
+
+小狼毫算法服务的进程会自动重启，删除时根据系统提示多关闭几次。
+
+---
+
+项目这里只列出关键配置，默认或自动生成的信息已忽略。
+
+自己修改配置时，请注意 Rime 的 YAML 的语法缩进是两个空格，不能是 Tab 键格式。

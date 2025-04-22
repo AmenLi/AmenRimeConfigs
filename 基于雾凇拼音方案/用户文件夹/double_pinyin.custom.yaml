@@ -9,10 +9,3 @@ patch:
 
   # 自定义词库 rime_ice.custom.dict.yaml
   translator/dictionary: rime_ice.custom
-
-  # 添加云联想候选词输入配置
-  engine/+:
-    processors/+:
-      - lua_processor@cloud_pinyin_processor
-    translators/+:
-      - lua_translator@cloud_pinyin_translator

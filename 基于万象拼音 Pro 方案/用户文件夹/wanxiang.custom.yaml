@@ -31,7 +31,7 @@ patch:
       reset: 0
     - name: chinese_english
       states: [ 关, 翻译 ] # 翻译实际输入的字母
-      reset: 1
+      reset: 0
     - name: tone_display
       states: [ 实际输入, 声调全拼 ] # "调"指显示实际输入按键，"声"具体指显示带声调的全拼拼音
       reset: 1

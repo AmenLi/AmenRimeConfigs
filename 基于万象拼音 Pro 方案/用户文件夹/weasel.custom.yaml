@@ -16,6 +16,7 @@ patch:
       ascii_mode: true
     Code.exe:
       ascii_mode: true
+      ascii_punct: false
 
   # 缩短中英文切换提示的显示时间
   show_notifications_time: 300

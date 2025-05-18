@@ -8,6 +8,8 @@
 
 ## 基于雾凇拼音方案
 
+<details>
+
 使用[雾凇拼音](https://github.com/iDvel/rime-ice)的自然码双拼，无辅助码。
 
 使用[万象拼音方案](https://github.com/amzxyz)的[语法模型+词库](https://github.com/amzxyz/RIME-LMDG)，及[自己修改的 Dracula 配色](https://github.com/AmenLi/AmenDracula-for-Rime)。
@@ -34,6 +36,8 @@
 为了同时使用雾凇和万象的词库，把雾凇词库的 `base.dict.yaml` 改名为 `rimeice.base.dict.yaml` 以避免部署时的冲突及覆盖。
 
 但因为这些词库太大，部署日志必定会报词组重复的错误。**暂时不知道是否影响正常使用**。
+
+</details>
 
 ## 重新部署+排查问题
 

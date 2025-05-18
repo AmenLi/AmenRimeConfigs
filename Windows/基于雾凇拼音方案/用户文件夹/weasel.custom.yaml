@@ -1,9 +1,7 @@
 patch:
-  app_options/+:
+  "app_options/+":
   # 添加自己需要的默认英文输入的应用程序
     Listary.exe:
-      ascii_mode: true
-    cmd.exe:
       ascii_mode: true
     explorer.exe:
       ascii_mode: true
@@ -15,44 +13,47 @@ patch:
       ascii_mode: true
     devenv.exe:
       ascii_mode: true
+    Code.exe:
+      ascii_mode: true
+      ascii_punct: false
 
   # 缩短中英文切换提示的显示时间
   show_notifications_time: 300
 
-  style/+:
-    color_scheme: AmenDracula
+  "style/color_scheme": AmenDracula
+  "style/+":
     # 修改字体顺序
     font_face: "Microsoft YaHei, Segoe UI Emoji, SF Pro, Noto Color Emoji"
-    # AmenDracula 配色候选框样式
+    # AmenDracula 配色的候选框样式
     layout:
-      border_width: 1           # 边框宽度；又名 border
-      candidate_spacing: 3      # 候选项之间的间距
+      align_type: center        # 标签、候选文字、注解文字之间的相对对齐方式
+      candidate_spacing: 3      # 候选词之间的间距
       corner_radius: 3          # 候选窗口圆角半径
-      hilite_padding: 3         # 高亮区域和内部文字的间距，影响高亮区域大小
-      hilite_spacing: 3         # 候选项和相应标签的间距
+      hilite_padding: 3         # 候选词高亮区域和内部文字的间距，影响高亮区域大小
+      hilite_spacing: 3         # 每个候选词和相应数字标签的间距
       margin_x: 7               # 主体元素和候选框的左右边距；为负值时，不显示候选框
       margin_y: 7               # 主体元素的上下边距；为负值时，不显示候选框
       round_corner: 3           # 候选背景色块圆角半径，又名 hilited_corner_radius
       spacing: 10               # inline_preedit 为否时，编码区域和候选区域的间距
 
-  preset_color_schemes/+:
+  "preset_color_schemes/+":
     # 阿闷的 Dracula 配色
+    # 颜色代码格式为带 0x 的 BGR，非 RGB
     AmenDracula:
       name: 阿闷 / AmenDracula
       author: 阿闷
-      # 默认配色
-      text_color: 0                             # 文字
-      label_color: 16640395                     # 标签
-      border_color: 3549736                     # 边框
-      back_color: 3549736                       # 背景
-      comment_text_color: 10777186              # 注释
-      # 普通候选项配色
-      candidate_text_color: 16356285            # 文字
-      # 编码区域配色
-      hilited_text_color: 0                     # 文字
-      hilited_back_color: 13948116              # 背景
-      # 选中的候选区域配色
-      hilited_candidate_back_color: 13007359    # 背景
-      hilited_candidate_text_color: 16777215    # 文字
-      hilited_comment_text_color: 10777186      # 注释
-      hilited_label_color: 16777215             # 标签
+      back_color: 0x362A28                    # 整体候选框的背景颜色
+      border_color: 0x362A28                  # 整体候选框的边框颜色
+
+      text_color: 0x5555FF                    # preedit 的字体颜色
+      hilited_text_color: 0x5555FF            # 被选中的 preedit 的字体颜色
+      hilited_back_color: 0xF2F8F8            # 被选中的 preedit 的背景颜色
+
+      hilited_candidate_back_color: 0xC679FF  # 被选中的候选词的背景颜色
+      hilited_label_color: 0xFDE98B           # 被选中的候选词序号字体颜色
+      hilited_candidate_text_color: 0xF2F8F8  # 被选中的候选词的字体颜色
+      hilited_comment_text_color: 0x5A4744    # 被选中的候选词右边提示文本的字体颜色
+
+      label_color: 0xFDE98B                   # 其它候选词序号的字体颜色
+      candidate_text_color: 0xF993BD          # 其它候选词的字体颜色
+      comment_text_color: 0xA47262            # 其它候选词右边提示文本的字体颜色

@@ -1,18 +1,22 @@
 # 阿闷的 Rime 配置
 
+[自用的 Dracula 配色](https://github.com/AmenLi/AmenDracula-for-Rime)
+
 ## 基于万象拼音 Pro 方案
 
-对于双拼用户，确实是集大成的方案，目前对方案里的注释和说明理解不透彻，主要还是靠 [DeepWiki](https://deepwiki.com/) 和在交流群里询问来解决配置的理解问题。
+对于双拼用户，万象确实是集大成的方案。目前对方案里的注释和说明理解不透彻，主要还是靠 [DeepWiki](https://deepwiki.com/) 和在交流群里询问来解决配置的理解问题。
 
-自定义短语文件 `amen_custom_phrase` 属于隐私，留空不上传。注意使用 Tab 符号做间隔就行。
+自定义短语文件 `amen_custom_phrase` 属于隐私，留空不上传。注意使用 Tab 符号做间隔。
 
 ## 基于雾凇拼音方案
+
+基于雾凇拼音方案的配置内容在 2025.05.18 以后不再更新。一切以万象拼音方案的配置为准。
 
 <details>
 
 使用[雾凇拼音](https://github.com/iDvel/rime-ice)的自然码双拼，无辅助码。
 
-使用[万象拼音方案](https://github.com/amzxyz)的[语法模型+词库](https://github.com/amzxyz/RIME-LMDG)，及[自己修改的 Dracula 配色](https://github.com/AmenLi/AmenDracula-for-Rime)。
+使用[万象拼音方案](https://github.com/amzxyz)的[语法模型+词库](https://github.com/amzxyz/RIME-LMDG)
 
 ### 万象的语法模型+词库说明
 
@@ -25,7 +29,7 @@
 
 使用作者的方法，才能正确打出。但其它长句示例还是会有问题，目前观望中，之后可能全面转万象拼音 Pro。根据其它使用者的说法，直接使用万象拼音效果非常不错。
 
-![](/基于雾凇拼音方案/长句错误示例.png)
+![](/Windows/基于雾凇拼音方案/长句错误示例.png)
 
 #### 添加词库
 
@@ -41,7 +45,11 @@
 
 ## 重新部署+排查问题
 
-这个配置在部署时**花费时间比较长**，需要耐心等待几分钟。
+这个配置在部署时**花费时间比较长**，需要耐心等待几分钟，一次部署不生效就部署两次，前提是配置没错。
+
+小狼毫 v0.17后，在任务栏提供了一个图标显示部署状态，可以用作参考
+
+![](/部署状态任务栏图标.png)
 
 必要时
 

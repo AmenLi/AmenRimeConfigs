@@ -11,7 +11,7 @@ patch:
   # 当设置 reset: 0 时，会在切换窗口或程序时将状态重置为 states 中的第一个选项
   # 如果注释掉或不设置 reset 属性，则切换窗口时不会重置，会保持用户最后设置的状态
   # 还有一种方法，直接在 user.yaml 里设置
-  # states 的第一个选项是默认开关状态
+  # 如果设置了 reset: 0，states 的第一个选项是默认开关状态
   # 各种快捷键要查看 wanxiang.schema.yaml 的 key_binder
   # 使用快捷键的开关状态的保存行为也是由每个开关的 reset 属性决定的。
 

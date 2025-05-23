@@ -4,7 +4,7 @@
 
 ## 基于万象拼音 Pro 方案
 
-对于双拼用户，万象确实是集大成的方案。目前对方案里的注释和说明理解不透彻，主要还是靠 [DeepWiki](https://deepwiki.com/) 和在交流群里询问来解决配置的理解问题。
+对于双拼用户，[万象拼音 Pro](https://github.com/amzxyz) 确实是集大成的方案。目前对方案里的注释和说明理解不透彻，主要还是靠 [DeepWiki](https://deepwiki.com/) 和在交流群里询问来解决配置的理解问题。
 
 自定义短语文件 `amen_custom_phrase` 属于隐私，留空不上传。注意使用 Tab 符号做间隔。
 

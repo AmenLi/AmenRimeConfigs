@@ -5,5 +5,5 @@ patch:
     - F4 # 只使用 F4 热键
   switcher/fold_options: false
   ascii_composer/switch_key/Shift_R: inline_ascii # 临时英文上屏
-  key_binder/bindings/+:
+  key_binder/bindings/+: # 固定小键盘回车的行为
       - {accept: KP_Enter,    send: Return,   when: composing}

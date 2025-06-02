@@ -21,6 +21,7 @@ patch:
   show_notifications_time: 300
 
   "style/color_scheme": AmenDracula
+#  "style/inline_preedit": true # 行内显示预编辑区 true 时，可能会在游戏内打字卡死
   "style/+":
     # 修改字体顺序
     font_face: "Microsoft YaHei, Segoe UI Emoji, SF Pro, Noto Color Emoji"

@@ -69,3 +69,7 @@ patch:
   quick_symbol_text/+:
     q: "‰"
     w: "？"
+
+# 设置为空，避免在中文状态下输入数字后无法输出中文标点符号
+# 比如中文状态下，输入100后，输入逗号或句号，输出的是英文标点
+  punctuator/digit_separators: ""

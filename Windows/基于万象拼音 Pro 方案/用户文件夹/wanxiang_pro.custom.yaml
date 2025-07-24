@@ -1,0 +1,19 @@
+patch:
+  speller/algebra:
+    __patch:
+    - wanxiang_pro.schema:/自然码
+    # 改用间接辅助，降低辅助码优先级，给中文状态下输入英文的需求让路，让实际输入字母的不会提前被识别成辅助码
+    # 间接辅助需要先输入 / 再输入辅助码
+    - wanxiang_pro.schema:/间接辅助
+  
+  # 引入自己的 custom_phrase.txt
+  custom_phrase/user_dict: amen_custom_phrase
+
+  # 仅覆盖需要修改的两个快符
+  quick_symbol_text/+:
+    q: "‰"
+    w: "？"
+
+# 设置为空，避免在中文状态下输入数字后无法输出中文标点符号
+# 比如中文状态下，输入 100 后，输入逗号或句号，输出的是英文标点
+  # punctuator/digit_separators: ""

@@ -1,19 +1,82 @@
 patch:
   speller/algebra:
     __patch:
-    - wanxiang_pro.schema:/自然码
-    # 改用间接辅助，降低辅助码优先级，给中文状态下输入英文的需求让路，让实际输入字母的不会提前被识别成辅助码
-    # 间接辅助需要先输入 / 再输入辅助码
-    - wanxiang_pro.schema:/间接辅助
-  
-  # 引入自己的 custom_phrase.txt
+      - wanxiang_algebra:/pro/微软双拼
+
+      - wanxiang_algebra:/pro/间接辅助
+      # 改用间接辅助，降低辅助码优先级，给中文状态下输入英文的需求让路，让实际输入字母的不会提前被识别成辅助码
+      # 间接辅助需要先输入 / 再输入辅助码。直接辅助是nire=你  而间接则需要/引导  ni/re=你
+
+# 引入自己的 custom_phrase.txt
   custom_phrase/user_dict: amen_custom_phrase
 
-  # 仅覆盖需要修改的两个快符
-  quick_symbol_text/+:
-    q: "‰"
-    w: "？"
+# Tips 配置项
+  tips:
+    disabled_types: [化学式, 翻译, 表情, 车牌]
+
+#  注释states用于隐藏选项，添加更多reset以符合自己习惯。
+  switches:
+    - name: ascii_mode
+#      states: [ 中文, 英文 ]
+    - name: ascii_punct
+      states: [ 中标, 英标 ]
+      reset: 0
+    - name: full_shape
+#      states: [ 半角, 全角 ]
+      reset: 0
+    - name: emoji
+#      states: [ 表情关, 表情开 ]
+      reset: 0
+    - name: chinese_english
+#      states: [ 翻译关, 翻译开 ]
+      reset: 0
+    - name: chaifen_switch
+#      states: [ 拆分关, 拆分开 ]
+    - name: charset_filter
+#      states: [ 大字集, 小字集 ]
+      reset: 1
+    - name: super_tips
+#      states: [ 提示关, 提示开 ]
+      reset: 0
+    - options: [ raw_input, tone_display, full_pinyin ]
+#      states: [ 原编码, 有声调, 无声调 ]
+      reset: 1
+    - options: [ comment_off, fuzhu_hint, tone_hint ]
+#      states: [ 注释关, 辅助开, 读音开 ]
+    - options: [ s2s, s2t, s2hk, s2tw ]
+#      states: [ 简体, 通繁, 港繁, 臺繁 ]
+    - options: [ abbrev_off, abbrev_lazy, abbrev_always ]
+      states: [ 简码关, 空出简, 总出简 ]
+      reset: 1
+    - name: char_priority
+#     states: [词组先, 单字先]
+
+# 调整时间的候选词顺序
+  date_formats:
+    - "Y年m月d日"
+    - "Y.m.d"
+    - "Y年n月j日"
+    - "n月j日"
+    - "Ymd"
+    - "Y-m-d"
+    - "Y/m/d"
+    - "y年n月j日"
+  time_formats:
+    - "H:M:S"
+    - "H:M"
+    - "H时M分S秒"
+    - "H点M分"
+    - "AI:M"
+    - "I:M P"
+  datetime_formats:
+    - "Y.m.d H:M:S"
+    - "Y-m-dTH:M:S O"
+    - "Y年m月d日 H点M分"
+    - "Y-m-d H:M:S"
+    - "YmdHMS"
+    - "y/m/d I:M p"
 
 # 设置为空，避免在中文状态下输入数字后无法输出中文标点符号
 # 比如中文状态下，输入 100 后，输入逗号或句号，输出的是英文标点
+# 默认情况下，万象输出数字后，要按两次才是中文标点。
   # punctuator/digit_separators: ""
